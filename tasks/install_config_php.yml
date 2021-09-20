@@ -1,0 +1,14 @@
+---
+  - name: install php-fpm
+    apt:
+      name: php-fpm
+      state: latest
+      update_cache: yes
+    notify:
+      - start php-fpm
+  - name: config php
+    copy:
+      src: www.conf
+      dest: /etc/php/7.4/fpm/pool.d/www.conf
+    notify:
+      - restart php-fpm

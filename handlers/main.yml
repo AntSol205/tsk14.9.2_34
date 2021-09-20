@@ -1,0 +1,23 @@
+---
+  - name: start nginx
+    systemd:
+      name: nginx
+      state: started
+      enabled: yes
+  - name: start php-fpm
+    systemd:
+      name: php7.4-fpm
+      state: started
+      enabled: yes
+  - name: restart php-fpm
+    systemd:
+      name: php7.4-fpm
+      state: restarted
+  - name: restart nginx
+    systemd:
+      name: nginx
+      state: restarted
+
+
+
+# handlers file for nginx+php

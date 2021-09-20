@@ -1,0 +1,7 @@
+---
+  - name: playbook
+    hosts: tstub
+    become: yes
+    become_method: sudo
+    roles:
+      - nginx+php

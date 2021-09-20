@@ -1,0 +1,32 @@
+---
+  - name: install nginx
+    apt:
+      name: nginx
+      state: latest
+      update_cache: yes
+    notify:
+        - start nginx
+  - name: config nginx
+    copy:
+      src: nginx.conf
+      dest: /etc/nginx/nginx.conf
+    notify:
+        - restart nginx
+  - name: create default site
+    copy:
+      src: default
+      dest: /etc/nginx/sites-available/default
+    notify:
+        - restart nginx
+  - name:
+    file:
+      state: directory
+      path: /opt/nginx/ansible
+    notify:
+        - restart nginx
+  - name:
+    copy:
+      src: index.php
+      dest: /opt/nginx/ansible/index.php
+    notify:
+        - restart nginx

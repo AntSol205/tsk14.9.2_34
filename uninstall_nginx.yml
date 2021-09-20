@@ -1,0 +1,16 @@
+---
+  - name: playbook
+    hosts: tstub
+    become: yes
+    become_method: sudo
+    tasks:
+      - name: uninsall nginx
+        apt:
+          name: "{{ item }}"
+          state: absent
+          purge: yes
+          autoremove: yes
+        loop:
+          - nginx
+          - nginx-core
+          - nginx-common

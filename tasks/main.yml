@@ -1,0 +1,6 @@
+---
+  - name: install nginx
+    include_tasks: tasks/install_config_nginx.yml
+  - name: install php-fpm
+    include_tasks: tasks/install_config_php.yml
+# tasks file for nginx+php
