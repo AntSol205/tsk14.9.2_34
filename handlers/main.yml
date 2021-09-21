@@ -9,10 +9,11 @@
       name: php7.4-fpm
       state: started
       enabled: yes
-  - name: restart php-fpm
+  - name: start php-fpm
     systemd:
       name: php7.4-fpm
-      state: restarted
+      state: started
+      enabled: yes
   - name: restart nginx
     systemd:
       name: nginx
