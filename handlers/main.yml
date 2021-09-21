@@ -14,9 +14,9 @@
       name: php7.4-fpm
       state: started
       enabled: yes
-  - name: restart nginx
+  - name: restart php7.4-fpm
     systemd:
-      name: nginx
+      name: php7.4-fpm
       state: restarted
 
 
