@@ -14,7 +14,7 @@
       name: php7.4-fpm
       state: started
       enabled: yes
-  - name: restart php7.4-fpm
+  - name: restart php-fpm
     systemd:
       name: php7.4-fpm
       state: restarted
